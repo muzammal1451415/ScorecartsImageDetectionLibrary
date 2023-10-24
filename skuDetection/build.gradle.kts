@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -56,3 +57,28 @@ dependencies {
     implementation ("org.tensorflow:tensorflow-lite:2.4.0")
     implementation ("org.tensorflow:tensorflow-lite-gpu:2.4.0")
 }
+
+publishing {
+    publications {
+        create<MavenPublication>("myPublication") {
+
+
+            groupId = "com.example" // Replace with your group ID
+            artifactId = "your-library-name" // Replace with your artifact ID
+            version = "1.0.0" // Replace with your version
+        }
+    }
+
+    repositories {
+        maven {
+            name = "GitHubPackages" // Repository name
+            url = uri("https://maven.pkg.github.com/your-username/your-repo") // Replace with your GitHub repository URL
+            credentials {
+                username = project.findProperty("gpr.user") as String? // GitHub username
+                password = project.findProperty("gpr.token") as String? // GitHub token
+            }
+        }
+    }
+}
+
+
