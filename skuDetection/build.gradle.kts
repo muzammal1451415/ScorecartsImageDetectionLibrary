@@ -63,22 +63,12 @@ publishing {
         create<MavenPublication>("myPublication") {
 
 
-            groupId = "com.example" // Replace with your group ID
-            artifactId = "your-library-name" // Replace with your artifact ID
+            groupId = "com.github.muzammal1451415" // Replace with your group ID
+            artifactId = "image-detection-library" // Replace with your artifact ID
             version = "1.0.0" // Replace with your version
         }
     }
 
-    repositories {
-        maven {
-            name = "GitHubPackages" // Repository name
-            url = uri("https://maven.pkg.github.com/your-username/your-repo") // Replace with your GitHub repository URL
-            credentials {
-                username = project.findProperty("gpr.user") as String? // GitHub username
-                password = project.findProperty("gpr.token") as String? // GitHub token
-            }
-        }
-    }
 }
 
 
