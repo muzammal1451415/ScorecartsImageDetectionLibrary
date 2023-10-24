@@ -61,7 +61,7 @@ dependencies {
 publishing {
     publications {
         create<MavenPublication>("myPublication") {
-            from(components["java"])
+            from(components.findByName("release"))
 
             groupId = "com.github.muzammal1451415" // Replace with your group ID
             artifactId = "image-detection-library" // Replace with your artifact ID
