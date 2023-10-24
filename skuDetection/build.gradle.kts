@@ -65,7 +65,7 @@ publishing {
 
             groupId = "com.github.muzammal1451415" // Replace with your group ID
             artifactId = "image-detection-library" // Replace with your artifact ID
-            version = "1.0.0" // Replace with your version
+            version = "1.0.2" // Replace with your version
         }
     }
 
